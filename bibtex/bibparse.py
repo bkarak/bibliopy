@@ -123,10 +123,13 @@ def parse_bib(bibfile):
 		try:
 			l.index('=')
 			kv_data = l.split('=')
-			key = kv_data[0].strip()
+			key = kv_data[0].strip().lower()
 			mr = re.search('["{](.+)["}]',kv_data[1].strip())
-			if mr is not None:
-				current.data[key] = mr.group(1).strip()
+			if mr != None:
+				value = mr.group(1).strip()
+				value = value.replace("{", "")
+				value = value.replace("}", "")
+				current.data[key] = value
 		except (ValueError, AttributeError):
 			continue
 
