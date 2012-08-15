@@ -2,6 +2,9 @@
 # ChangeLog for biblio.py
 #
 
+v0.56 (sanity), bkarak:
+		* FIXED: Minor fixes in bibtex parser
+
 v0.55 (sanity), bkarak:
 		* FIXED: ~/.biblio.py/repositories file is now created correctly, when you run the program for the first time
 		* ADDED: pdf storage support
