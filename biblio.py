@@ -163,7 +163,7 @@ class CmdDispatcher:
             print self.__getKey(k).get_pdf()
 
     def doHelp(self):
-        print """\nbibliography utility v0.55 (code name: sanity)
+        print """\nbibliography utility v0.56 (code name: sanity)
 
 usage: biblio.py <directive> <arguments>
 

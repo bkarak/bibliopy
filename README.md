@@ -24,7 +24,7 @@ Remember, the tool is written to be resilient to errors. So, if you happen to ha
 
     $ python biblio-py
 
-    bibliography utility v0.52
+    bibliography utility v0.56
 
     usage: biblio.py <directive> >arguments<
 
