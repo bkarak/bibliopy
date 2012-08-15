@@ -28,15 +28,15 @@ Remember, the tool is written to be resilient to errors. So, if you happen to ha
 
     usage: biblio.py <directive> >arguments<
 
-    key               - Export a specific key
-    addpath           - Add a repository path
-    list              - Lists all repository paths (and checks their validity)
-    search <keyword>  - search ALL bibtex tags for specific entries
-    count             - Count all bibtex entries and print statistics
-    export <keys...>  - Extracts the selected keys
-    expfile <file>    - Read the selected keys from a specified file and export the entries
+    key                - Export a specific key
+    addpath            - Add a repository path
+    list               - Lists all repository paths (and checks their validity)
+    search <keyword>   - search ALL bibtex tags for specific entries
+    count              - Count all bibtex entries and print statistics
+    export <keys...>   - Extracts the selected keys
+    expfile <file>     - Read the selected keys from a specified file and export the entries
     texmode <files...> - Search a latex file and exports its entries
-    help              - Prints the online help
+    help               - Prints the online help
 
 One usage i usually like is mixture with latex. I use a simplistic makefile to simplify the building process, and looks something like that:
 
