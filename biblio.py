@@ -162,11 +162,19 @@ class CmdDispatcher:
         for k in self.__args:
             print self.__getKey(k).get_pdf()
 
+    def doNew(self):
+        print bibparse.BibtexEntry.new_entry(self.__args[0])
+        
+
     def doHelp(self):
         print """\nbibliography utility v0.56 (code name: sanity)
 
 usage: biblio.py <directive> <arguments>
 
+new <type>         - Print a new entry, one of the following:
+                     (article, book, booklet, inbook, incollection,
+                      inproceedings, manual, mastersthesis, misc,
+                      phdthesis, proceedings, techreport, unpublished)
 key                - Export a specific key
 addpath            - Add a repository path
 list               - List repository paths (also checks their validity)
