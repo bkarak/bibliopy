@@ -1,7 +1,6 @@
 
 def new_article():
-	return """
-@Article{
+	return """@Article{
 	Title="Required",
 	Author="Required",
 	Journal="Required",
@@ -15,8 +14,7 @@ def new_article():
 }"""
 
 def new_book():
-	return """
-@Book{
+	return """@Book{
 	Title="Required",
 	Edition="Optional",
 	Series="Optional",
@@ -34,8 +32,7 @@ def new_book():
 """
 
 def new_booklet():
-	return """
-@Booklet{
+	return """@Booklet{
 	Address="Optional",
 	Author="Optional",
 	HowPublished="Optional",
@@ -48,8 +45,7 @@ def new_booklet():
 }"""
 
 def new_inbook():
-	return """
-@InBook{
+	return """@InBook{
 	Address="Optional",
 	Author="Required or Editor",
 	Chapter="Required or Pages",
@@ -67,8 +63,7 @@ def new_inbook():
 }"""
 
 def new_incollection():
-	return """
-@InCollection{
+	return """@InCollection{
 	Author="Required",
 	Title="Required",
 	Chapter="Optional",
@@ -84,8 +79,7 @@ def new_incollection():
 }"""
 
 def new_inproceedings():
-	return """
-@InProceedings{
+	return """@InProceedings{
 	Title="Required",
 	Author="Required",
 	Booktitle="Required",
@@ -102,8 +96,7 @@ def new_inproceedings():
 }"""
 
 def new_manual():
-	return """
-@Manual{
+	return """@Manual{
 	Address="Optional",
 	Annote="Annotation",
 	Author="Optional",
@@ -118,8 +111,7 @@ def new_manual():
 }"""
 
 def new_mastersthesis():
-	return """
-@MastersThesis{
+	return """@MastersThesis{
 	Address="Optional",
 	Author="Required",
 	Month="Optional",
@@ -131,8 +123,7 @@ def new_mastersthesis():
 }"""
 
 def new_misc():
-	return """
-@Misc{
+	return """@Misc{
 	Author="Optional",
 	HowPublished="Optional",
 	Key="Optional (needed if no Author)",
@@ -144,8 +135,7 @@ def new_misc():
 }"""
 
 def new_phdthesis():
-	return """
-@PhDThesis{
+	return """@PhDThesis{
 	Address="Optional",
 	Author="Required",
 	Month="Optional",
@@ -157,8 +147,7 @@ def new_phdthesis():
 }"""
 
 def new_proceedings():
-	return """
-@Proceedings{
+	return """@Proceedings{
 	Title="Required",
 	Editor="Optional",
 	Note="Optional",
@@ -171,8 +160,7 @@ def new_proceedings():
 }"""
 
 def new_techreport():
-	return """
-@TechReport{
+	return """@TechReport{
 	Author="Required",
 	Title="Required",
 	Note="Optional",
@@ -186,8 +174,7 @@ def new_techreport():
 }"""
 
 def new_unpublished():
-	return """
-@Unpublished{
+	return """@Unpublished{
 	Author="Required",
 	Month="Optional",
 	Note="Required",
