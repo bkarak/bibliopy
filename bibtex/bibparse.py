@@ -117,6 +117,7 @@ def parse_bib(bibfile):
 			else:
 				bibitems.append(current)
 				current = BibtexEntry(bibfile)
+
 			current.key = mr.group(2).strip()
 			current.btype = mr.group(1).strip()
 			continue
