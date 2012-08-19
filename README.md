@@ -14,6 +14,8 @@ So i wrote this (for the Greek Linux Format, download article code here) as a si
 * Portable
 * Resilient to errors
 
+See also [bibtex-parser](https://github.com/bkarak/bibliopy/blob/master/README-bibtex-parser.md)
+
 Usage
 -----
 To initialise the program you just have to add some paths (directories that contain your bib files), and then perform search export or count. 
