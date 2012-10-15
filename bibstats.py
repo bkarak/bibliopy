@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!python
 
 # Copyright (c) 2012, Vassilios Karakoidas (vassilios.karakoidas@gmail.com)
 # All rights reserved.

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!python
 
 # biblio.py - A simple bibliography management tool
 
