@@ -51,6 +51,9 @@ class BibtexEntry:
                     continue
 
         return False
+        
+    def keys(self):
+        return self.data.keys()
     
     def __get_pdf_name(self):
         if not len(self.key):

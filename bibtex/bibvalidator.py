@@ -50,7 +50,8 @@ class BibFields(object):
             return False
         
         if bibentry.btype == 'article':
-            pass
+            for k in bibentry.keys():
+                pass
         
         return False
                 
