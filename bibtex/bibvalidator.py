@@ -42,8 +42,16 @@ class BibFields(object):
     TECHREPORT_REQUIRED = [TITLE, AUTHOR, YEAR, REQUIRED]
     UNPUBLISHED_REQUIRED = [TITLE, AUTHOR, NOTE]
     
+    VALID_TYPES = ['article', 'book', 'booklet', 'inbook', 'incollection', 'inproceedings', 'manual', 'mastersthesis', 'misc', 'phdthesis', 'proceedings', 'techreport', 'unpublished']
+    
     @staticmethod
     def validate_entry(bibentry):
+        if bibentry.btype not in VALID_TYPES:
+            return False
+        
+        if bibentry.btype == 'article':
+            pass
+        
         return False
                 
     
