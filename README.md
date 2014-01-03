@@ -20,9 +20,9 @@ Usage
 -----
 To initialise the program you just have to add some paths (directories that contain your bib files), and then perform search export or count. 
 
-An interesting feature is the expfile argument that exports all the BiBTeX keys that are written to a text file. The keys should occupy one line each (subject to change). Be aware that unicode is not supported in this function. 
+An interesting feature is the *expfile* argument that exports all the BiBTeX keys that are written to a text file. The keys should occupy one line each (subject to change). Be aware that unicode is not supported in this function. 
 
-Remember, the tool is written to be resilient to errors. So, if you happen to have duplicate entries (or entries with missing tags), no worries, biblio.py will not complain. Just add your BiBTeX dirs, search and export.
+Remember, the tool is written to be resilient to errors. So, if you happen to have duplicate entries (or entries with missing tags), no worries, *biblio.py* will not complain. Just add your BiBTeX dirs, search and export.
 
     $ python biblio-py
 
