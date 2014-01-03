@@ -90,19 +90,19 @@ class BibtexEntry:
 
     @staticmethod
     def new_entry(entry_type):
-        entry_dict = {'article' : bibtemplates.new_article, 
-                      'book' : bibtemplates.new_book, 
-                      'booklet' : bibtemplates.new_booklet, 
-                      'inbook' : bibtemplates.new_inbook, 
-                      'incollection' : bibtemplates.new_incollection,
-                      'inproceedings' : bibtemplates.new_inproceedings, 
-                      'manual' : bibtemplates.new_manual, 
-                      'mastersthesis' : bibtemplates.new_mastersthesis, 
-                      'misc' : bibtemplates.new_misc,
-                      'phdthesis' : bibtemplates.new_phdthesis, 
-                      'proceedings' : bibtemplates.new_proceedings, 
-                      'techreport' :  bibtemplates.new_techreport, 
-                      'unpublished' : bibtemplates.new_unpublished}
+        entry_dict = {'article': bibtemplates.new_article, 
+                      'book': bibtemplates.new_book, 
+                      'booklet': bibtemplates.new_booklet, 
+                      'inbook': bibtemplates.new_inbook, 
+                      'incollection': bibtemplates.new_incollection,
+                      'inproceedings': bibtemplates.new_inproceedings, 
+                      'manual': bibtemplates.new_manual, 
+                      'mastersthesis': bibtemplates.new_mastersthesis, 
+                      'misc': bibtemplates.new_misc,
+                      'phdthesis': bibtemplates.new_phdthesis, 
+                      'proceedings': bibtemplates.new_proceedings, 
+                      'techreport':  bibtemplates.new_techreport, 
+                      'unpublished': bibtemplates.new_unpublished}
 
         entry_func = entry_dict.get(entry_type, None)
 
