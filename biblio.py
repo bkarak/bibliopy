@@ -43,18 +43,21 @@ class CmdDispatcher:
         # works only for posix based systems so far
         # check for .biblio-py
         self.__homedir = os.path.expanduser('~')
-        self.__configdir = "%s/.biblio-py" % ( self.__homedir, )
+        self.__configdir = f"{self.__homedir}/.biblio-py"
+
         if not os.access(self.__configdir, os.F_OK):
-            print "ERROR: directory %s does not exist!!! Creating basic configuration" % ( self.__configdir, )
+            print(f"ERROR: directory {self.__configdir} does not exist!!! Creating basic configuration")
             os.mkdir(self.__configdir)
-            print "Created %s directory " % ( self.__configdir, )
-            print "Use 'addpath' directive to add new .bib containing directories"
-            os.exit(1)
+            print(f"Created {self.__configdir} directory ")
+            print("Use 'addpath' directive to add new .bib containing directories")
+            os.sh
 
         # search for repositories
-        self.__repconf_file = "%s/repositories" % ( self.__configdir, )
+        self.__repconf_file = f"{self.__configdir}/repositories"
+
         if not os.access(self.__repconf_file, os.F_OK):
-            print "ERROR: cannot find repositories file, creating a default file"
+            print("ERROR: cannot find repositories file, creating a default file")
+
             fp = open(self.__repconf_file, "w")
             fp.close()
 
@@ -64,15 +67,17 @@ class CmdDispatcher:
                 self.__repos.append(line.strip())
             repconf.close()
         except IOError:
-            print "ERROR: %s does not exist!" % ( self.__repconf_file, )
-            print "Use 'addpath' directive to add new .bib containing directories"
-            os.exit(1)
+            print(f"ERROR: {self.__repconf_file} does not exist!")
+            print("Use 'addpath' directive to add new .bib containing directories")
+            exit()
 
         # scan the directories / bibfiles
         files = []
+
         for r in self.__repos:
             rfiles = scan_dirs(r)
             files.extend(rfiles)
+        
         for f in files:
             self.__bibfiles[f] = bibparse.parse_bib(f)
 
@@ -94,18 +99,18 @@ class CmdDispatcher:
             for val in v:
                 if val != None:
                     if val.search(self.__args):
-                        print val
+                        print(val)
 
     def doCount(self):
         total = 0
         file_count = 0
 
         for k, v in self.__bibfiles.iteritems():
-            print 'Processed %s ... found %d entries' % ( k, len(v) )
+            print(f"Processed {k} ... found {len(v)} entries")
             total = total + len(v)
             file_count = file_count + 1
 
-        print '\nTotal: %d entries in %d files' % ( total, file_count )
+        print(f"\nTotal: {total} entries in {file_count} files")
 
     def __getKey(self, key):
         for k, v in self.__bibfiles.iteritems():
@@ -120,7 +125,7 @@ class CmdDispatcher:
         for exp_key in self.__args:
             bentry = self.__getKey(exp_key)
             if bentry is not None:
-                print bentry.export()
+                print(bentry.export())
 
     def doExpfile(self):
         filename = self.__args[0]
@@ -142,11 +147,13 @@ class CmdDispatcher:
 
         try:
             repofile = open(self.__repconf_file, "w")
+
             for r in self.__repos:
-                repofile.write("%s\n" % ( r,))
+                repofile.write(f"{r}\n")
+
             repofile.close()
         except IOError:
-            print "Cannot write %s" % ( self.__repconf_file, )
+            print(f"Cannot write {self.__repconf_file}")
 
     def doKey(self):
         self.doExport()
@@ -156,18 +163,18 @@ class CmdDispatcher:
             status = "OK"
             if not os.access(r, os.F_OK):
                 status = "ERROR"
-            print " %s - (%s)" % ( r, status )
+            print(f" {r} - ({status})")
 
     def doPdf(self):
         for k in self.__args:
-            print self.__getKey(k).get_pdf()
+            print(self.__getKey(k).get_pdf())
 
     def doNew(self):
-        print bibparse.BibtexEntry.new_entry(self.__args[0])
+        print(bibparse.BibtexEntry.new_entry(self.__args[0]))
         
 
     def doHelp(self):
-        print """\nbibliography utility v0.56 (code name: sanity)
+        print("""\nbibliography utility v0.56 (code name: sanity)
 
 usage: biblio.py <directive> <arguments>
 
@@ -184,7 +191,7 @@ export <keys...>   - Extracts the selected keys
 expfile <file>     - Read the selected keys from a specified file and export the entries
 texmode <files...> - Search a latex
 pdf <keys...>      - Prints the path of the associated PDF file
-help               - Prints the online help"""
+help               - Prints the online help""")
 
 # scans the paths
 def scan_dirs(path):
@@ -235,6 +242,7 @@ def main():
         cdisp = CmdDispatcher(['biblio.py', 'help'])
         cdisp.doHelp()
         return
+    
     starting_path = os.path.abspath(os.path.dirname(sys.argv[0]))
     # Set python's path to look for modules under our toplevel dir structure
     sys.path.append(starting_path)

@@ -2,33 +2,36 @@
 # ChangeLog for biblio.py
 #
 
+v0.57 bkarak:
+	* ADDED: ported code to python 3.x
+
 v0.56 (sanity), bkarak:
-		* FIXED: Minor fixes in bibtex parser
+	* FIXED: Minor fixes in bibtex parser
 
 v0.55 (sanity), bkarak:
-		* FIXED: ~/.biblio.py/repositories file is now created correctly, when you run the program for the first time
-		* ADDED: pdf storage support
-		
-		Now biblio.py automatically find and adds to each bibtex entry pdf file that contain the actual document.
-		The pdf file is stored in a folder with the bib file's name, in the same directory. For example, the file '/home/bkarak/foo.bib'
-		should contain the pdf files in '/home/bkarak/foo'. The pdf file should have as filename the entry's key.
-		
-		The entry that will be generated will look like:
-		
-		@techreport{GRSH00,
-			Title = {Rules of Thumb in Data Engineering},
-			Year = {2000},
-			Author = {Jim Gray and Prashant Shenoy},
-			Institution = {Microsoft Research, Advanced Technology Division},
-			Filename = {[...]/bibliography/reading/2009/june-2009.bib},
-			pdf-file = {[...]/bibliography/reading/2009/june-2009/grsh00.pdf},
-		}
-		
-		* REMOVED: Optik library removed
+	* FIXED: ~/.biblio.py/repositories file is now created correctly, when you run the program for the first time
+	* ADDED: pdf storage support
+	
+	Now biblio.py automatically find and adds to each bibtex entry pdf file that contain the actual document.
+	The pdf file is stored in a folder with the bib file's name, in the same directory. For example, the file '/home/bkarak/foo.bib'
+	should contain the pdf files in '/home/bkarak/foo'. The pdf file should have as filename the entry's key.
+	
+	The entry that will be generated will look like:
+	
+	@techreport{GRSH00,
+		Title = {Rules of Thumb in Data Engineering},
+		Year = {2000},
+		Author = {Jim Gray and Prashant Shenoy},
+		Institution = {Microsoft Research, Advanced Technology Division},
+		Filename = {[...]/bibliography/reading/2009/june-2009.bib},
+		pdf-file = {[...]/bibliography/reading/2009/june-2009/grsh00.pdf},
+	}
+	
+	* REMOVED: Optik library removed
 
 v0.53 (ckkl), bkarak:
-		* FIXED: fixed minor bug when the 'biblio.py' was executed without parameters
-		* ADDED: Command-line parsing is now using the Optik library (included in the bundle)
+	* FIXED: fixed minor bug when the 'biblio.py' was executed without parameters
+	* ADDED: Command-line parsing is now using the Optik library (included in the bundle)
 		
 v0.52 (ckkl), bkarak:
-		* FIXED: bibparser ignored the last entry of each bib file
+	* FIXED: bibparser ignored the last entry of each bib file

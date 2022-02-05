@@ -58,4 +58,4 @@ Since version 0.5 biblio.py has the texmode. With this directive you can instruc
 	    pdflatex document.tex
 	    pdflatex document.tex
 
-Latest version is **v0.56**.
+Latest version is **v0.57**.

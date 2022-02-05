@@ -24,9 +24,10 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-import re, os, bibtemplates
+import re, os
 
-from cStringIO import StringIO
+from bibtex import bibtemplates
+from io import StringIO
 
 class BibtexEntry:
     def __init__(self, bibfile):
