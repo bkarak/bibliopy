@@ -33,6 +33,7 @@ import re
 
 from bibtex import bibparse
 
+
 # Command-line Dispatcher
 class CmdDispatcher:
     def __init__(self, args):
@@ -79,7 +80,10 @@ class CmdDispatcher:
             files.extend(rfiles)
         
         for f in files:
-            self.__bibfiles[f] = bibparse.parse_bib(f)
+            try:
+                self.__bibfiles[f] = bibparse.parse_bib(f)
+            except:
+                print(f'Failed to parse => {f}')
 
     def getBibfiles(self):
         return self.__bibfiles
@@ -219,6 +223,7 @@ def scan_tex_files(files):
 
         for line in tf_desc:
             mr_list = re.findall('cite{([^}]+)}', line.strip())
+
             if len(mr_list) > 0:
                 for mr in mr_list:
                     try:
@@ -249,6 +254,7 @@ def main():
     # initialise the dispatcher and execute
     cdisp = CmdDispatcher(sys.argv[2:])
     getattr(cdisp, "do" + sys.argv[1].title())()
+
 
 # call the main function
 if __name__ == '__main__':

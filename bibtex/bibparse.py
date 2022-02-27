@@ -91,19 +91,21 @@ class BibtexEntry:
 
     @staticmethod
     def new_entry(entry_type):
-        entry_dict = {'article': bibtemplates.new_article, 
-                      'book': bibtemplates.new_book, 
-                      'booklet': bibtemplates.new_booklet, 
-                      'inbook': bibtemplates.new_inbook, 
-                      'incollection': bibtemplates.new_incollection,
-                      'inproceedings': bibtemplates.new_inproceedings, 
-                      'manual': bibtemplates.new_manual, 
-                      'mastersthesis': bibtemplates.new_mastersthesis, 
-                      'misc': bibtemplates.new_misc,
-                      'phdthesis': bibtemplates.new_phdthesis, 
-                      'proceedings': bibtemplates.new_proceedings, 
-                      'techreport':  bibtemplates.new_techreport, 
-                      'unpublished': bibtemplates.new_unpublished}
+        entry_dict = {
+            'article': bibtemplates.new_article,
+            'book': bibtemplates.new_book,
+            'booklet': bibtemplates.new_booklet,
+            'inbook': bibtemplates.new_inbook,
+            'incollection': bibtemplates.new_incollection,
+            'inproceedings': bibtemplates.new_inproceedings,
+            'manual': bibtemplates.new_manual,
+            'mastersthesis': bibtemplates.new_mastersthesis,
+            'misc': bibtemplates.new_misc,
+            'phdthesis': bibtemplates.new_phdthesis,
+            'proceedings': bibtemplates.new_proceedings,
+            'techreport':  bibtemplates.new_techreport,
+            'unpublished': bibtemplates.new_unpublished
+        }
 
         entry_func = entry_dict.get(entry_type, None)
 
@@ -136,22 +138,28 @@ def parse_bib(bibfile):
     current = None
 
     for l in bib_file:
-        mr = re_head.match(l.strip())
-        if mr is not None:
-            if current is None:
-                current = BibtexEntry(bibfile)
-            else:
-                bibitems.append(current)
-                current = BibtexEntry(bibfile)
+        try:
+            mr = re_head.match(l.strip())
 
-            current.key = mr.group(2).strip()
-            current.btype = mr.group(1).strip()
+            if mr is not None:
+                if current is None:
+                    current = BibtexEntry(bibfile)
+                else:
+                    bibitems.append(current)
+                    current = BibtexEntry(bibfile)
+
+                current.key = mr.group(2).strip()
+                current.btype = mr.group(1).strip()
+                continue
+        except:
             continue
+
         try:
             l.index('=')
             kv_data = l.split('=')
             key = kv_data[0].strip().lower()
             mr = re.search('["{](.+)["}]',kv_data[1].strip())
+
             if mr != None:
                 value = mr.group(1).strip()
                 value = value.replace("{", "")
