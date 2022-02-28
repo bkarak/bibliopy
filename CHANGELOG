@@ -1,6 +1,8 @@
 #
 # ChangeLog for biblio.py
 #
+v0.58 bkarak:
+	* FIXED: add more error control when parsing bib files
 
 v0.57 bkarak:
 	* ADDED: ported code to python 3.x
