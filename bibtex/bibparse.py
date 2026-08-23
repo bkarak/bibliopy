@@ -44,7 +44,7 @@ class BibtexEntry:
 
     def search(self, keywords):
         for word in keywords:
-            for (k, v) in self.data.iteritems():
+            for (k, v) in self.data.items():
                 try:
                     v.lower().index(word.lower())
                     return True
@@ -119,7 +119,7 @@ class BibtexEntry:
 
         result.write("@%s{%s,\n" % ( self.btype.lower().strip(), self.key.strip() ))
 
-        for k, v in self.data.iteritems():
+        for k, v in self.data.items():
             result.write("\t%s = {%s},\n" % ( k.title().strip(), v.strip() ))
         
         filename =  self.__get_pdf_name()
@@ -134,7 +134,7 @@ def parse_bib(bibfile):
     bibitems = []
     bib_file = open(bibfile, "r")
 
-    re_head = re.compile('@([a-zA-Z]+)[ ]*\{[ ]*(.*),')
+    re_head = re.compile(r'@([a-zA-Z]+)[ ]*\{[ ]*(.*),')
     current = None
 
     for l in bib_file:

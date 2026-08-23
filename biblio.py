@@ -51,7 +51,6 @@ class CmdDispatcher:
             os.mkdir(self.__configdir)
             print(f"Created {self.__configdir} directory ")
             print("Use 'addpath' directive to add new .bib containing directories")
-            os.sh
 
         # search for repositories
         self.__repconf_file = f"{self.__configdir}/repositories"
@@ -91,7 +90,7 @@ class CmdDispatcher:
     def search(self, keyword):
         results = []
 
-        for (k, v) in self.__bibfiles.iteritems():
+        for (k, v) in self.__bibfiles.items():
             for val in v:
                 if val.search([keyword]):
                     results.append(val)
@@ -99,7 +98,7 @@ class CmdDispatcher:
         return results
 
     def doSearch(self):
-        for (k, v) in self.__bibfiles.iteritems():
+        for (k, v) in self.__bibfiles.items():
             for val in v:
                 if val != None:
                     if val.search(self.__args):
@@ -109,7 +108,7 @@ class CmdDispatcher:
         total = 0
         file_count = 0
 
-        for k, v in self.__bibfiles.iteritems():
+        for k, v in self.__bibfiles.items():
             print(f"Processed {k} ... found {len(v)} entries")
             total = total + len(v)
             file_count = file_count + 1
@@ -117,7 +116,7 @@ class CmdDispatcher:
         print(f"\nTotal: {total} entries in {file_count} files")
 
     def __getKey(self, key):
-        for k, v in self.__bibfiles.iteritems():
+        for k, v in self.__bibfiles.items():
             for val in v:
                 if val is not None:
                     if val.getKey(key):
@@ -193,7 +192,7 @@ search <keyword>   - search ALL bibtex tags for specific entries
 count              - Count all bibtex entries and print statistics
 export <keys...>   - Extracts the selected keys
 expfile <file>     - Read the selected keys from a specified file and export the entries
-texmode <files...> - Search a latex
+texmode <files...> - Search a latex file and export its entries
 pdf <keys...>      - Prints the path of the associated PDF file
 help               - Prints the online help""")
 
