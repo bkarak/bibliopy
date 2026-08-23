@@ -177,7 +177,7 @@ class CmdDispatcher:
         
 
     def doHelp(self):
-        print("""\nbibliography utility v0.58
+        print("""\nbibliography utility v0.59
 
 usage: biblio.py <directive> <arguments>
 

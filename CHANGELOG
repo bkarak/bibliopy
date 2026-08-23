@@ -1,6 +1,13 @@
 #
 # ChangeLog for biblio.py
 #
+v0.59 bkarak:
+	* ADDED: complete BibTeX parser (strings, concatenation, braces,
+	  comments, preamble, crossref, UTF-8, resilient recovery)
+	* ADDED: parse_string / parse helpers and authors() on BibtexEntry
+	* FIXED: bibvalidator required-field lists and NameError
+	* UPDATED: bibtex-parser documentation and unit tests
+
 v0.58 bkarak:
 	* FIXED: first-run setup no longer crashes after creating ~/.biblio-py
 	* FIXED: Python 3 compatibility leftovers (dict.items instead of iteritems)
