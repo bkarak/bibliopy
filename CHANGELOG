@@ -1,6 +1,10 @@
 #
 # ChangeLog for biblio.py
 #
+v0.60 bkarak:
+	* ADDED: __version__ on biblio.py and the bibtex package (both 0.60)
+	* UPDATED: help text, README, and bibtex-parser docs to v0.60
+
 v0.59 bkarak:
 	* ADDED: complete BibTeX parser (strings, concatenation, braces,
 	  comments, preamble, crossref, UTF-8, resilient recovery)

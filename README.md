@@ -33,7 +33,7 @@ Usage
 
     $ python3 biblio.py
 
-    bibliography utility v0.59
+    bibliography utility v0.60
 
     usage: biblio.py <directive> <arguments>
 
@@ -78,4 +78,4 @@ Since version 0.5 biblio.py has the *texmode* directive. With this you can instr
 	    pdflatex document.tex
 	    pdflatex document.tex
 
-Latest version is **v0.59**.
+Latest version is **v0.60**.

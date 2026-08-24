@@ -1,7 +1,7 @@
 bibtex-parser
 =============
 
-The bibtex parser used in *biblio.py* can also be used as a stand-alone library to parse bibtex files.
+The bibtex parser used in *biblio.py* can also be used as a stand-alone library to parse bibtex files. Current version is **v0.60** (`bibtex.__version__`).
 
 Usage
 -----

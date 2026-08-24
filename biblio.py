@@ -33,6 +33,8 @@ import re
 
 from bibtex import bibparse
 
+__version__ = '0.60'
+
 
 # Command-line Dispatcher
 class CmdDispatcher:
@@ -177,7 +179,7 @@ class CmdDispatcher:
         
 
     def doHelp(self):
-        print("""\nbibliography utility v0.59
+        print(f"""\nbibliography utility v{__version__}
 
 usage: biblio.py <directive> <arguments>
 
